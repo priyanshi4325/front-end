@@ -1,0 +1,62 @@
+body{
+    background-color: beige;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+.profilephoto{
+    padding-left: 25px;
+}
+img{
+    border-radius: 50%;
+}
+.header {
+    margin-left: 25px;
+    line-height: 10px;
+}
+h3{
+    font-size: 17px; 
+    color: rgba(5, 19, 65, 0.815);
+}
+th{
+    font-size: 20px; 
+    color: rgba(5, 19, 65, 0.815);
+}
+.contact{
+    text-align: left;
+    line-height: 30px;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-right: 45px;
+    font-size: 18px;
+}
+.skills{
+    padding-left: 35px;
+    padding-right: 45px;
+    line-height: 30px;
+    font-size: 18px;
+}
+.profile{
+    line-height: 25px;
+    font-size: 18px;
+}
+.work{
+    line-height: 25px;
+    font-size: 18px;
+    vertical-align: top;
+}
+.accomplishments{
+    padding-right: 45px;
+    line-height: 30px;
+    font-size: 18px;
+}
+.educationtitle{
+    font-size: 20px; 
+    text-align: center; 
+    color: rgba(5, 19, 65, 0.815);
+}
+.education{
+    line-height: 25px;
+    font-size: 18px;
+}
