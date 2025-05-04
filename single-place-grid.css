@@ -1,0 +1,75 @@
+body{
+    background-color: #e4edf5;
+    font-family: Georgia;
+}
+.box{
+    width: 699px;
+    height: 575px;
+    border: 1px outset #f7f8fa;
+    margin: 100px 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.header{
+    height: 200px;
+    padding: 20px;
+    padding-bottom: 5px;
+    background-color: white;
+}
+.line1{
+    font-weight: bold;
+    font-size: 25px;
+    color: #4a9e96;
+}
+.line2{
+    font-weight: bold;
+    font-size: 20px;
+    color:#bede31;
+}
+.line3{
+    font-size: 15px;
+    color: darkslategray;
+}
+.main{
+    display: flex;
+}
+.subscription{
+    background-color: #2bb5b3;
+    padding: 20px;
+    color: white;
+    width: 306px;
+}
+.subline1{
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+.sublineprice{
+    font-size: 40px;
+    color: white;
+}
+.button{
+    display: inline-block;
+    text-align: center;
+    background-color: #bede31; 
+    color: white;              
+    font-size: 20px;
+    font-weight: bold; 
+    padding: 10px 20px;        
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+    width: 250px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+.whyus{
+    background-color: #49bfbd;
+    padding: 20px;
+    color: white;
+    width: 400px;
+    line-height: 1;
+}
+.whyuscontent{
+    padding-top: 10px;
+}
