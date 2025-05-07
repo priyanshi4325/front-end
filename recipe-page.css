@@ -1,0 +1,58 @@
+body{
+    font-family: "Outfit", sans-serif;
+    background-color: #f2e4d8;
+    margin: 100px 400px;
+}
+.box{
+    width: 700px;
+    height: 115vw;
+    background-color: white;
+    border-radius: 15px;
+}
+.image{
+    width: 600px;
+    height: 274px;
+    padding: 20px 18px;
+}
+.header{
+    padding-top: 20px;
+    padding-left: 30px;
+    color: #85827f;
+    line-height: 2;
+}
+h1{
+    color: black;
+}
+.title{
+    font-weight: bold;
+    font-size: 25px;
+    color: #824834;
+    letter-spacing: 1px;
+}
+.content{
+    padding-left: 30px;
+    color: #85827f;
+    line-height: 2;
+    padding-right: 20px;
+}
+.bold{
+    font-weight: bold;
+    color: #59544f;
+}
+.table{
+    padding: 10px;
+    width: 100%;
+}
+.unit{
+    font-weight: bold;
+    color: #824834;
+    border-collapse: collapse;
+    padding: 8px;
+}
+.cell{
+    border-bottom: 2px solid lightgray;
+}
+li::marker {
+    color: #824834;
+    font-weight: bold;
+  }
