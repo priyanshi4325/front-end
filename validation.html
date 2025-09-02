@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Validation</title>
+	<link rel="stylesheet" href="validation.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		span {
+			color: darkred;
+		}
+	</style>
+	<script>
+		function validation() {
+			result = true;
+			//Start User Name Validation
+			var name = document.getElementById("uname").value;
+			if (name == "") {
+				result = false;
+			}
+			//End User Name Validation
+
+			//Start Father's Name Validation
+			var fname = document.getElementById("fname").value;
+			if (fname == "") {
+				result = false;
+			}
+			//End Father's Name Validation
+
+			//Start Password Validation
+			var pass = document.getElementById("pass").value;
+			if (pass == "") {
+				result = false;
+			}
+			//End Password Validation
+
+			//Start DOB Validation
+			var dob = document.getElementById("dob").value;
+			if (dob == "") {
+				result = false
+			}
+			//End DOB Validation
+
+			//Start Email Validation
+			var email = document.getElementById("uemail").value;
+			if (email == "") {
+				result = false;
+			}
+			//End Email Validation
+
+			//Start TOB Validation
+			var tob = document.getElementById("tob").value;
+			if (tob == "") {
+				result = false
+			}
+			//End TOB Validation
+
+			//Start Mobile Number Validation
+			var num = document.getElementById("num").value;
+			if (num == "") {
+				result = false;
+			}
+			//End Mobile Number Validation
+
+			//Start Photo Validation
+			var photo = document.getElementById("photo").value;
+			if (photo == "") {
+				result = false;
+			}
+			//End Photo Validation
+
+			//Start Address Validation
+			var add = document.getElementById("temp_add").value;
+			if (add == "") {
+				result = false;
+			}
+			//End Address Validation
+
+			//Start City Validation
+			var city = document.getElementById("city").value;
+			if (city == "") {
+				result = false;
+			}
+			//End City Validation
+
+			//Start Gender Validation
+			var gender_result = false;
+			var count = document.getElementsByName("gender").length;
+			var gender = document.getElementsByName("gender");
+			for (i = 0; i < count; i++) {
+				if (gender[i].checked == true) {
+					gender_result = true;
+
+				}
+			}
+			if (gender_result == false) {
+				result = false;
+			}
+			//End Gender Validation
+
+			//Start Hobbies Validation
+			var hobby_result = false;
+			var count = document.getElementsByName("hobby").length;
+			var hobby = document.getElementsByName("hobby");
+			var check_count = 0
+			for (var i = 0; i < count; i++) {
+				if (hobby[i].checked == true) {
+					check_count++;
+				}
+			}
+			if (check_count >= 3) {
+				hobby_result = true;
+			}
+			else {
+				result = false;
+			}
+			//End Hobbies Validation
+			if (result == true) {
+				document.getElementById("submit").disabled = false;
+			} else {
+				document.getElementById("submit").disabled = true;
+			}
+			return result;
+
+		}
+
+		function yes_btn() {
+			var temp = document.getElementById("temp_add").value;
+			var perm = document.getElementById("perm_add")
+			perm.value = temp;
+			perm.readOnly = true;
+		}
+
+		function no_btn() {
+			var temp = document.getElementById("temp_add").value;
+			var perm = document.getElementById("perm_add");
+			perm.value = "";
+			perm.readOnly = false;
+			document.getElementById("permadd_error_msg").innerText = "Please input your permanent address."
+		}
+
+		function text_del() {
+			var data = document.getElementById("temp_add").value;
+			document.getElementById("perm_add").value = data;
+		}
+
+		function uname_check() {
+			//Start Name Type Validation
+			var name = document.getElementById("uname").value;
+			document.getElementById("uname_error_msg").innerText = "Please enter name."
+			if (name != "") {
+				document.getElementById("uname_error_msg").innerText = ""
+			}
+			else {
+				document.getElementById("uname_error_msg").innerText = "Please enter name."
+			}
+			//End Name Type Validation
+		}
+
+		//Start Father's Name Type Validation
+		function fname_check() {
+
+			var fname = document.getElementById("fname").value;
+			if (fname != "") {
+				document.getElementById("fname_error_msg").innerText = ""
+			}
+			else {
+				document.getElementById("fname_error_msg").innerText = "Please enter father's name."
+			}
+		}
+		//End Father's Name Type Validation
+
+		//Start Password Type Validation
+		function pass_check() {
+
+			var pass = document.getElementById("pass").value;
+			
+			if (pass != "") {
+				document.getElementById("pass_error_msg").innerText = ""
+				document.getElementById("pass_cond").style.visibility="visible";
+				var EightChar = new RegExp('(?=.{8,})');
+				var UpperCase = new RegExp('(?=.*[A-Z])');
+				var LowerCase = new RegExp('(?=.*[a-z])');
+				var NumberCase = new RegExp('(?=.*[0-9])');
+				var SpecialCase = new RegExp('(?=.*[!@#$%^&])');
+
+				if(EightChar.test(pass)){
+					document.getElementById("eight_char").style.color="green"
+				}
+				else{
+					document.getElementById("eight_char").style.color="red"
+				}
+
+				if(UpperCase.test(pass)){
+					document.getElementById("one_upper").style.color="green"
+				}
+				else{
+					document.getElementById("one_upper").style.color="red"
+				}
+
+				if(LowerCase.test(pass)){
+					document.getElementById("one_lower").style.color="green"
+				}
+				else{
+					document.getElementById("one_lower").style.color="red"
+				}
+
+				if(NumberCase.test(pass)){
+					document.getElementById("one_digit").style.color="green"
+				}
+				else{
+					document.getElementById("one_digit").style.color="red"
+				}
+
+				if(SpecialCase.test(pass)){
+					document.getElementById("one_special").style.color="green"
+				}
+				else{
+					document.getElementById("one_special").style.color="red"
+				}
+
+			}
+			else {
+				document.getElementById("pass_error_msg").innerText = "Please enter password.";
+				document.getElementById("pass_cond").style.visibility="hidden";
+
+			}
+		}
+		//End Password Type Validation
+
+		//Start DOB Type Validation
+		function dob_check() {
+			var dob = document.getElementById("dob").value;
+			if (dob != "") {
+				document.getElementById("dob_error_msg").innerText = ""
+			}
+			else {
+				document.getElementById("dob_error_msg").innerText = "Please enter date of birth."
+			}
+		}
+		//End DOB Type Validation
+
+		//Start Email Type Validation
+		function email_check() {
+
+			var uemail = document.getElementById("uemail").value;
+			if (uemail != "") {
+				document.getElementById("uemail_error_msg").innerText = ""
+			}
+			else {
+				document.getElementById("uemail_error_msg").innerText = "Please enter email id."
+			}
+		}
+		//End Email Type Validation
+
+		//Start TOB Type Validation
+		function tob_check() {
+			var tob = document.getElementById("tob").value;
+			if (tob != "") {
+				document.getElementById("tob_error_msg").innerText = ""
+			}
+			else {
+				document.getElementById("tob_error_msg").innerText = "Please enter time of birth."
+			}
+		}
+		//End TOB Type Validation
+
+		//Start Mobile Number Type Validation
+		function num_check() {
+			var num = document.getElementById("num").value;
+			var num_count = document.getElementById("num").value.length;
+			if (num != "") {
+				document.getElementById("num_error_msg").innerText = ""
+				if (num_count > 10) {
+					document.getElementById("num_error_msg").innerText = "Number cannot be more than 10 digits"
+				}
+				else if (num_count < 10) {
+					document.getElementById("num_error_msg").innerText = "Number cannot be less than 10 digits"
+				}
+				else {
+					document.getElementById("num_error_msg").innerHTML = "<span style='color:green;'>✅ Valid number</span>";
+				}
+			}
+			else {
+				document.getElementById("num_error_msg").innerText = "Please enter mobile number."
+			}
+		}
+		//End Mobile Number Type Validation
+
+		//Start Profile Photo Type Validation
+		function photo_check() {
+			var photo = document.getElementById("photo").value;
+			if (photo != "") {
+				document.getElementById("photo_error_msg").innerText = ""
+			}
+			else {
+				document.getElementById("photo_error_msg").innerText = "Please select profile photo."
+			}
+		}
+		//End Profile Photo Type Validation
+
+		//Start City Type Validation
+		function city_check() {
+			var city = document.getElementById("city").value;
+			if (city != "") {
+				document.getElementById("city_error_msg").innerText = ""
+			}
+			else {
+				document.getElementById("city_error_msg").innerText = "Please enter city."
+			}
+		}
+		//End City Type Validation
+
+		//Start Address Type Validation
+		function add_check() {
+			var temp_add = document.getElementById("temp_add").value;
+			var perm_add = document.getElementById("perm_add").value;
+			if (temp_add != "") {
+				document.getElementById("tempadd_error_msg").innerText = ""
+			}
+			else {
+				document.getElementById("tempadd_error_msg").innerText = "Please enter temporary address."
+			}
+			if (perm_add != "") {
+				document.getElementById("permadd_error_msg").innerText = ""
+			}
+			else {
+				document.getElementById("permadd_error_msg").innerText = "Please enter permanent address."
+			}
+		}
+		//End Address Type Validation
+
+		//Start Gender Type Validation
+		function gender_check() {
+			var count = document.getElementsByName("gender").length;
+			var gender = document.getElementsByName("gender");
+			for (var i = 0; i < count; i += 1) {
+				if (gender[i].checked == true) {
+					document.getElementById("gender_error_msg").innerText = ""
+				}
+			}
+		}
+		//End Gender Type Validation
+
+		//Start Hobby Type Validation
+		function hobby_check() {
+			var hobby = document.getElementsByName("hobby");
+			var check_count = 0
+			for (var i = 0; i < hobby.length; i++) {
+				if (hobby[i].checked) {
+					check_count++;
+				}
+			}
+
+			if (check_count >= 3) {
+				document.getElementById("hobby_error_msg").innerText = ""
+			}
+			else if (check_count < 3 && check_count > 0) {
+				document.getElementById("hobby_error_msg").innerText = "Please select at least 3 hobbies.";
+			}
+			else {
+				document.getElementById("hobby_error_msg").innerText = "Please select a hobby.";
+			}
+		}
+		//End Hobby Type Validation
+
+		function MaxLength(e) {
+			var num = document.getElementById("num").value.length;
+			if (num >= 10) {
+				return false
+			}
+			else {
+				return true
+			}
+		}
+		function show(){
+			var p=document.getElementById("pass");
+			var s=document.getElementById("open_eye");
+			var h=document.getElementById("close_eye");
+			p.type="text"
+			s.style.display="inline-flex"
+			h.style.display="none"
+		}
+		function hide(){
+			var p=document.getElementById("pass");
+			var s=document.getElementById("open_eye");
+			var h=document.getElementById("close_eye");
+			p.type="password"
+			s.style.display="none"
+			h.style.display="inline-flex"
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Form</h1>
+	<form action="D:\Coding_work\JavaScript\events\name_repeat.html" onsubmit="return validation()">
+		Name:<span>* </span> <input type="text" id="uname" onkeyup="uname_check(); validation()" onclick="uname_check()">
+		<span id="uname_error_msg"></span>
+		<br><br>
+
+		Father's Name: <span>* </span> <input type="text" id="fname" onkeyup="fname_check(); validation()" onclick="fname_check()">
+		<span id="fname_error_msg"></span>
+		<br><br>
+
+		Password: <span>* </span> <input type="password" id="pass" onkeyup="pass_check(); validation()" onclick="pass_check()">
+		<i onclick="hide()" id="open_eye" class="fa fa-eye" style="display: none;"></i>
+		<i onclick="show()" id="close_eye" class="fa fa-eye-slash"></i>
+		<span id="pass_error_msg"></span> 
+		<span id="pass_cond" style="visibility: hidden;">Password should have at least <span id="eight_char">8 characters</span>, <span id="one_upper">one uppercase letter</span>, <span id="one_lower">one lowercase letter</span>, <span id="one_digit">one digit</span> and <span id="one_special">one special character.</span></span>
+		<br><br>
+
+		DOB: <span>* </span><input type="date" id="dob" onchange="dob_check(); validation()" onclick="dob_check()">
+		<span id="dob_error_msg"></span><br><br>
+
+		Email: <span>* </span><input type="email" id="uemail" onkeyup="email_check(); validation()" onclick="email_check()">
+		<span id="uemail_error_msg"></span>
+		<br><br>
+
+		TOB: <span>* </span><input type="time" id="tob" onchange="tob_check(); validation()" onclick="tob_check()">
+		<span id="tob_error_msg"></span>
+		<br><br>
+
+		Mobile Number: <span>* </span><input type="number" id="num" onkeyup="num_check(); validation()"
+			onkeypress="return MaxLength(event)" onclick="num_check()">
+		<span id="num_error_msg"></span>
+		<br><br>
+
+		Profile Photo: <span>* </span><input type="file" id="photo" onchange="photo_check(); validation()" onclick="photo_check()">
+		<span id="photo_error_msg"></span>
+		<br><br>
+
+		City:<span>* </span><select id="city" onchange="city_check(); validation()" onclick="city_check()">
+			<option value="">Select City</option>
+			<option value="Indore">Indore</option>
+			<option value="Bhopal">Bhopal</option>
+			<option value="Ujjain">Ujjain</option>
+		</select>
+		<span id="city_error_msg"></span>
+		<br><br>
+
+		Temporary Address: <span>* </span> <textarea id="temp_add" onkeyup="text_del();add_check(); validation()" onclick="add_check()"></textarea><br><br>
+		<span id="tempadd_error_msg"></span><br><br>
+		<p>Permanent address same as temporary address?</p>
+		<input type="radio" name="choice" value="Yes" onclick="yes_btn()">Yes
+		<input type="radio" name="choice" value="No" onclick="no_btn()">No<br>
+
+		Permanent Address:<span>* </span> <textarea id="perm_add" onkeyup="add_check(); validation()" onclick="add_check()"></textarea><br><br>
+		<span id="permadd_error_msg"></span><br><br>
+
+		Gender: <span>* </span> <input type="radio" name="gender" onchange="gender_check(); validation()" onclick="gender_check()">Male
+		<input type="radio" name="gender" onchange="gender_check(); validation()" onclick="gender_check()">Female
+		<span id="gender_error_msg"></span><br><br>
+
+		<div id="hobby" onchange="hobby_check(); validation()" onclick="hobby_check()">
+			Hobbies: <span>* </span> <input type="checkbox" name="hobby">Reading
+			<input type="checkbox" name="hobby">Writing
+			<input type="checkbox" name="hobby">Singing
+			<input type="checkbox" name="hobby">Dancing
+			<input type="checkbox" name="hobby">Playing sports
+			<input id="travelling" type="checkbox" name="hobby">Travelling
+			<input id="binge" type="checkbox" name="hobby">Binge Watching
+			<span id="hobby_error_msg"></span><br><br>
+		</div>
+
+		<input type="submit" disabled id="submit">
+
+	</form>
+</body>
+
+</html>
