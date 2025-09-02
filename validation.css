@@ -1,0 +1,50 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f9;
+    margin: 30px;
+    padding: 0;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+form{
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+    height: 876px;
+    width: 512px;
+}
+
+#submit {
+    width: 100 px;
+    padding: 14px;
+    background: #c3c5c8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: not-allowed;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+#submit:enabled {
+    cursor: pointer;
+    background: #357ABD;
+}
+
+#submit:enabled:hover {
+    background: #2a5d9f;
+}
+
+#hobby{
+    line-height: 45px;
+}
+
+#travelling{
+    margin-left: 76px;
+}
