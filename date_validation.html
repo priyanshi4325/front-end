@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Validation</title>
+    <script>
+        
+        function date_validation(){
+        var today = new Date();
+        
+        //Today's date and 2 months from now//
+        
+        document.getElementById("dob").min = today.toISOString().slice(0, 10);
+
+        var maxDate = new Date();
+        maxDate.setMonth(today.getMonth() + 2);
+        document.getElementById("dob").max = maxDate.toISOString().slice(0, 10);
+        
+        //Today's date and 2 months earlier from now//
+
+        document.getElementById("dob_2").max = today.toISOString().slice(0,10);
+
+        var minDate2 = new Date();
+        minDate2.setMonth(today.getMonth()-2);
+        document.getElementById("dob_2").min = minDate2.toISOString().slice(0,10);
+        
+        //Age 18 years only//
+
+        var maxDate2 = new Date();
+        maxDate2.setFullYear(today.getFullYear()-18);
+        document.getElementById("dob_3").max = maxDate2.toISOString().slice(0,10);
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1 style="color: blueviolet;">Date Validation</h1>
+        
+    <h3>Today's date and 2 months from now</h3>
+    Date: <input type="date" id="dob" onclick="date_validation()">
+    
+    <h3>Today's date and 2 months earlier from now</h3>
+    Date: <input type="date" id="dob_2" onclick="date_validation()">
+
+    <h3>Age 18 years only</h3>
+    Date: <input type="date" id="dob_3" onclick="date_validation()">
+
+</body>
+
+</html>
