@@ -1,7 +1,8 @@
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f9;
+    background-color: #c3d1e4;
     margin: 30px;
+    margin-left: 500px;
     padding: 0;
     justify-content: center;
     align-items: flex-start;
@@ -9,17 +10,25 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-form{
+span {
+    color: darkred;
+}
+
+h1 {
+    margin-left: 260px;
+}
+
+form {
     background-color: white;
     border: none;
     border-radius: 20px;
-    padding: 30px;
-    height: 876px;
-    width: 512px;
+    padding: 40px;
+    height: 1198px;
+    width: 586px;
 }
 
 #submit {
-    width: 100 px;
+    width: 200px;
     padding: 14px;
     background: #c3c5c8;
     color: white;
@@ -41,10 +50,79 @@ form{
     background: #2a5d9f;
 }
 
-#hobby{
+#hobby {
     line-height: 45px;
 }
 
-#travelling{
+#travelling {
     margin-left: 76px;
+}
+
+.field,
+.field_date,
+.field_time {
+    height: 22px;
+    width: 250px;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 30px;
+    padding: 3px;
+    border: 2px groove #c3d1e4;
+}
+
+.field_date {
+    width: 100px;
+}
+
+.field_time {
+    width: 70px;
+}
+
+.photo_btn {
+    margin-left: 30px;
+}
+
+.custom-dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin-left: 30px;
+    width: 250px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    background: #fff;
+    border: 2px groove #c3d1e4;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    padding-right: 30px;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.custom-dropdown:focus {
+    border-color: #4e9af1;
+    box-shadow: 0 0 6px rgba(78, 154, 241, 0.6);
+}
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-container::after {
+    content: "▼";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #666;
+    pointer-events: none;
+}
+.address{
+    height: 107px;
+    width: 478px;
+    margin-top: 18px;
+    border-radius: 8px;
+    border: 2px groove #c3d1e4;
 }
